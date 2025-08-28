@@ -1,9 +1,13 @@
 # backend/server.py (Full File - Paste Exactly)
+from bhiv_core import get_orchestrator
+from bhiv_bucket import save_script
 from fastapi import FastAPI, UploadFile, File, Form, HTTPException
 from fastapi.responses import FileResponse
 from pydantic import BaseModel
 from pathlib import Path
+from bhiv_bucket import save_script
 from video.feedback_adapter import adapt_storyboard
+from video.bhiv_integration import BHIVClient
 import uuid, shutil, json, sqlite3, os
 from video.storyboard import generate_storyboard_from_file
 import time
@@ -33,10 +37,44 @@ def init_db():
 
 init_db()
 
+@app.post("/bhiv/upload")
+async def bhiv_upload(vid: str):
+    bhiv = BHIVClient()
+    video_path = VIDEOS / f"{vid}.mp4"
+    if not video_path.exists():
+        raise HTTPException(404, "Video not found")
+    
+    result = bhiv.upload_to_bucket(str(video_path), f"{vid}.mp4")
+    return {"bucket_url": result}
+
 
 class UploadResponse(BaseModel):
     id: str
     message: str
+
+@app.post("/bhiv/ingest")
+async def bhiv_ingest(file: UploadFile = File(...)):
+    """BHIV script ingestion webhook"""
+    orchestrator = get_orchestrator()
+    
+    # Save uploaded file temporarily
+    temp_path = Path("temp") / file.filename
+    temp_path.parent.mkdir(exist_ok=True)
+    
+    with open(temp_path, "wb") as f:
+        shutil.copyfileobj(file.file, f)
+    
+    # Ingest into BHIV
+    script_id, bucket_path = orchestrator.ingest_script(temp_path)
+    
+    # Process webhook
+    result = orchestrator.process_webhook(script_id, "process")
+    
+    return {
+        "script_id": script_id,
+        "bucket_path": bucket_path,
+        "webhook_result": result
+    }
 
 
 @app.post("/upload", response_model=UploadResponse)
