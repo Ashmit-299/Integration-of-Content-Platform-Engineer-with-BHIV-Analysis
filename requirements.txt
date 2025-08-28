@@ -1,0 +1,8 @@
+fastapi
+uvicorn[standard]
+moviepy
+pillow
+python-multipart
+pydantic
+moviepy
+

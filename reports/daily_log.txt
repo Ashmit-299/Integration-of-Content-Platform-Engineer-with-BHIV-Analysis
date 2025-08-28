@@ -1,0 +1,4 @@
+Day 1: Repo skeleton created. Manual steps: storyboard heuristics, simple image-based video generation.
+Day 2: Implemented storyboard generator and video generator using Pillow + moviepy.
+Day 3: FastAPI backend with endpoints for upload, generate, stream, and rating.
+Day 4: Packaging and README added for deployment.
