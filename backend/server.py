@@ -76,6 +76,13 @@ async def bhiv_ingest(file: UploadFile = File(...)):
         "webhook_result": result
     }
 
+@app.post("/bhiv/feedback")
+async def bhiv_feedback(vid: str, rating: int = Form(...), comment: str = Form("")):
+    """BHIV AI feedback processing"""
+    orchestrator = get_orchestrator()
+    result = orchestrator.process_feedback(vid, rating, comment)
+    return result
+
 
 @app.post("/upload", response_model=UploadResponse)
 async def upload_script(file: UploadFile = File(...)):
