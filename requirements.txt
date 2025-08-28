@@ -4,5 +4,7 @@ moviepy
 pillow
 python-multipart
 pydantic
-moviepy
-
+python-dotenv
+requests
+imageio[ffmpeg]
+numpy
