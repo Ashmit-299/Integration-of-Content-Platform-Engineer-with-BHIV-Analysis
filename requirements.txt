@@ -7,3 +7,4 @@ matplotlib>=3.8.0
 plotly>=5.17.0
 textblob>=0.17.0
 python-dotenv>=1.0.0
+opencv-python>=4.8.0
