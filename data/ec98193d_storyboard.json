@@ -1,0 +1,29 @@
+{
+  "title": "Title: Basic Statistics Example",
+  "scenes": [
+    {
+      "scene_id": 1,
+      "text": "Title: Basic Statistics Example An example of calculating mean and median: Suppose we have the numbers 2, 3, 3, 5, 7, 10. The mean is the average value.",
+      "duration_secs": 9,
+      "type": "example",
+      "bg_color": "#E0F7FA",
+      "visual_hint": "Insert illustrative diagram"
+    },
+    {
+      "scene_id": 2,
+      "text": "The median is the middle value in a sorted list. Definition: Mean is calculated as the sum divided by count.",
+      "duration_secs": 6,
+      "type": "standard",
+      "bg_color": "#FFFFFF",
+      "visual_hint": ""
+    },
+    {
+      "scene_id": 3,
+      "text": "Definition: Median is the middle value after sorting. Summary: Understanding mean and median helps interpret data distribution.",
+      "duration_secs": 5,
+      "type": "summary",
+      "bg_color": "#FFFFFF",
+      "visual_hint": ""
+    }
+  ]
+}

@@ -1,9 +1,10 @@
 from pathlib import Path
 from bhiv_bucket import save_script, init_bucket
 from video.bhiv_integration import BHIVClient
-from bhiv_lm_client import get_lm_client
 import json
 import uuid
+from bhiv_lm_client import get_lm_client
+
 
 class BHIVOrchestrator:
     def __init__(self):
@@ -45,11 +46,11 @@ class BHIVOrchestrator:
         return {"script_id": script_id, "status": meta["status"]}
     
     def process_feedback(self, video_id, rating, comment):
-        """Process user feedback with AI analysis"""
         lm_client = get_lm_client()
         analysis = lm_client.analyze_feedback(video_id, rating, comment)
         log_file = lm_client.log_feedback(video_id, rating, comment, analysis)
         return {"analysis": analysis, "log_file": str(log_file)}
+
 
 def get_orchestrator():
     return BHIVOrchestrator()

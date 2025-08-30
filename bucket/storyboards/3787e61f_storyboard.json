@@ -1,0 +1,29 @@
+{
+  "title": "Title: Machine Learning Definition",
+  "scenes": [
+    {
+      "scene_id": 1,
+      "text": "Title: Machine Learning Definition Machine learning is defined as the study of algorithms that improve automatically through experience. Example: A spam filter improving with more emails.",
+      "duration_secs": 8,
+      "type": "example",
+      "bg_color": "#E0F7FA",
+      "visual_hint": "Insert illustrative diagram"
+    },
+    {
+      "scene_id": 2,
+      "text": "Definition: Supervised learning involves labeled data. Definition: Unsupervised learning does not use labeled data.",
+      "duration_secs": 4,
+      "type": "standard",
+      "bg_color": "#FFFFFF",
+      "visual_hint": ""
+    },
+    {
+      "scene_id": 3,
+      "text": "Summary: Machine learning is a key AI technique.",
+      "duration_secs": 3,
+      "type": "summary",
+      "bg_color": "#FFFFFF",
+      "visual_hint": ""
+    }
+  ]
+}

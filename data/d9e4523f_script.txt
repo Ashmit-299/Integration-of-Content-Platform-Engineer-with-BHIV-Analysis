@@ -1,0 +1,7 @@
+Title: Machine Learning Definition
+
+Machine learning is defined as the study of algorithms that improve automatically through experience.
+Example: A spam filter improving with more emails.
+Definition: Supervised learning involves labeled data.
+Definition: Unsupervised learning does not use labeled data.
+Summary: Machine learning is a key AI technique.

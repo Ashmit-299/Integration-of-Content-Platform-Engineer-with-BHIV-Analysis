@@ -1,5 +1,16 @@
 #!/bin/bash
-# Example deploy script for a generic container host
-docker build -t gurukul-content-platform:latest .
-echo "Built. To run locally:"
-echo "docker run -p 8000:8000 gurukul-content-platform:latest"
+echo "Deploying BHIV-Integrated Gurukul Content Platform..."
+
+# Build and deploy
+docker-compose down
+docker-compose build
+docker-compose up -d
+
+# Wait for services
+echo "Waiting for services to start..."
+sleep 10
+
+# Run smoke tests
+python smoke_test.py
+
+echo "Deployment complete! Access at http://localhost:8000"

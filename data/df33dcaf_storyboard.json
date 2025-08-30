@@ -1,0 +1,61 @@
+{
+  "title": "Morce Code:",
+  "scenes": [
+    {
+      "scene_id": 1,
+      "text": "Morce Code: .- -... -.-.",
+      "duration_secs": 3,
+      "type": "standard",
+      "bg_color": "#FFFFFF",
+      "visual_hint": ""
+    },
+    {
+      "scene_id": 2,
+      "text": "-.. .",
+      "duration_secs": 3,
+      "type": "standard",
+      "bg_color": "#FFFFFF",
+      "visual_hint": ""
+    },
+    {
+      "scene_id": 3,
+      "text": "..-. --.",
+      "duration_secs": 3,
+      "type": "standard",
+      "bg_color": "#FFFFFF",
+      "visual_hint": ""
+    },
+    {
+      "scene_id": 4,
+      "text": ".... ..",
+      "duration_secs": 3,
+      "type": "standard",
+      "bg_color": "#FFFFFF",
+      "visual_hint": ""
+    },
+    {
+      "scene_id": 5,
+      "text": ".--- -.- .-.. -- -.",
+      "duration_secs": 3,
+      "type": "standard",
+      "bg_color": "#FFFFFF",
+      "visual_hint": ""
+    },
+    {
+      "scene_id": 6,
+      "text": "--- .--. --.- .-.",
+      "duration_secs": 3,
+      "type": "standard",
+      "bg_color": "#FFFFFF",
+      "visual_hint": ""
+    },
+    {
+      "scene_id": 7,
+      "text": "--- - ..- ...- .-- -..- -.-- --..",
+      "duration_secs": 3,
+      "type": "standard",
+      "bg_color": "#FFFFFF",
+      "visual_hint": ""
+    }
+  ]
+}

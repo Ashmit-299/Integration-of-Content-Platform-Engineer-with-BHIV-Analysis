@@ -1,0 +1,15 @@
+{
+  "title": "Scene 1: Addition is the process of combining two or more numbers to get a total.",
+  "scenes": [
+    {
+      "scene_id": 1,
+      "text": "Scene 1: Addition is the process of combining two or more numbers to get a total. Scene 2: For example, 3 plus 2 equals 5.",
+      "duration_secs": 8
+    },
+    {
+      "scene_id": 2,
+      "text": "Scene 3: Addition is one of the fundamental operations in mathematics.",
+      "duration_secs": 3
+    }
+  ]
+}

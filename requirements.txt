@@ -8,3 +8,16 @@ python-dotenv
 requests
 imageio[ffmpeg]
 numpy
+sqlmodel
+httpx
+pytest
+aiohttp
+backoff
+PyJWT
+bcrypt
+backoff
+python-jose[cryptography]
+aiohttp
+PyJWT
+streamlit
+bcrypt
