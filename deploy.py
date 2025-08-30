@@ -22,12 +22,7 @@ def check_requirements():
         print("❌ .env file not found. Copy from .env.sample")
         return False
     
-    # Check FFmpeg
-    try:
-        subprocess.run(["ffmpeg", "-version"], capture_output=True, check=True)
-    except (subprocess.CalledProcessError, FileNotFoundError):
-        print("❌ FFmpeg not found. Please install FFmpeg")
-        return False
+    # FFmpeg is handled by imageio[ffmpeg] package automatically
     
     print("✅ All requirements met")
     return True
