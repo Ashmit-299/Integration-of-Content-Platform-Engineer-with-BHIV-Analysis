@@ -1,1 +1,1 @@
-# analytics package
+# Analytics module

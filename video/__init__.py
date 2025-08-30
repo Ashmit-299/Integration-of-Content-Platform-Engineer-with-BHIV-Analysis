@@ -1,1 +1,1 @@
-# Video package initialization
+# Video processing module

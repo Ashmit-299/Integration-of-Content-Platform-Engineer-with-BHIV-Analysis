@@ -84,112 +84,109 @@ st.set_page_config(
 if 'dark_theme' not in st.session_state:
     st.session_state.dark_theme = True
 
-# Dark theme CSS
+# Professional Modern Theme
 st.markdown("""
 <style>
-    .stApp { 
-        background-color: #0d1117 !important; 
-        color: #f0f6fc !important; 
+    .main {
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        color: white;
     }
-    .main > div { 
-        background-color: #0d1117 !important; 
-        color: #f0f6fc !important; 
-    }
-    .stMarkdown, .stText, p, h1, h2, h3, h4, h5, h6, span, div, label {
-        color: #f0f6fc !important;
-    }
-    .stSelectbox label, .stTextInput label, .stTextArea label, .stSlider label {
-        color: #f0f6fc !important;
-    }
-    .stMetric label, .stMetric div {
-        color: #f0f6fc !important;
-    }
-    .stExpander .streamlit-expanderHeader {
-        color: #f0f6fc !important;
-    }
-    .stForm {
-        background-color: #21262d !important;
-    }
-    .stAlert {
-        background-color: #30363d !important;
-        color: #f0f6fc !important;
+    .stApp {
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
     }
     .main-header {
-        background: linear-gradient(90deg, #21262d 0%, #30363d 100%);
-        padding: 2rem; border-radius: 10px; color: #f0f6fc !important;
-        text-align: center; margin-bottom: 2rem;
+        background: rgba(255, 255, 255, 0.1);
+        padding: 2rem;
+        border-radius: 15px;
+        text-align: center;
+        margin-bottom: 2rem;
+        backdrop-filter: blur(10px);
+        border: 1px solid rgba(255, 255, 255, 0.2);
     }
     .metric-card {
-        background: #21262d !important; padding: 1.5rem; border-radius: 10px;
-        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
-        border-left: 4px solid #58a6ff; color: #f0f6fc !important;
+        background: rgba(255, 255, 255, 0.15);
+        padding: 1.5rem;
+        border-radius: 12px;
+        text-align: center;
+        backdrop-filter: blur(10px);
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        margin: 0.5rem 0;
     }
     .upload-section {
-        background: #21262d !important; padding: 2rem; border-radius: 10px;
-        border: 2px dashed #30363d; text-align: center; color: #f0f6fc !important;
+        background: rgba(255, 255, 255, 0.1);
+        padding: 2rem;
+        border-radius: 15px;
+        border: 2px dashed rgba(255, 255, 255, 0.3);
+        text-align: center;
+        margin: 1rem 0;
     }
     .user-badge {
-        background: #30363d !important;
+        background: rgba(255, 255, 255, 0.2);
         padding: 0.3rem 0.8rem;
         border-radius: 15px;
-        color: #f0f6fc !important;
+        color: white;
         font-size: 0.9rem;
         margin-bottom: 0.5rem;
         display: inline-block;
+        backdrop-filter: blur(10px);
+    }
+    .video-card {
+        background: rgba(255, 255, 255, 0.1);
+        padding: 1.5rem;
+        border-radius: 12px;
+        margin: 1rem 0;
+        backdrop-filter: blur(10px);
+        border: 1px solid rgba(255, 255, 255, 0.2);
     }
     .stButton > button {
-        background-color: #30363d !important;
-        color: #f0f6fc !important;
-        border: 1px solid #58a6ff !important;
-        border-radius: 25px !important;
-        padding: 0.5rem 2rem !important;
-        font-weight: 600 !important;
+        background: linear-gradient(45deg, #ff6b6b, #ee5a24);
+        color: white;
+        border: none;
+        border-radius: 25px;
+        padding: 0.5rem 2rem;
+        font-weight: 600;
+        transition: all 0.3s ease;
+    }
+    .stButton > button:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 5px 15px rgba(0,0,0,0.3);
     }
     .stButton > button[kind="primary"] {
-        background-color: #238636 !important;
-        color: #ffffff !important;
-        border: 1px solid #2ea043 !important;
+        background: linear-gradient(45deg, #28a745, #20c997);
     }
-    .stButton > button[kind="secondaryFormSubmit"] {
-        background-color: #0066cc !important;
-        color: #ffffff !important;
-        border: 1px solid #0052a3 !important;
+    .stButton > button[kind="secondary"] {
+        background: linear-gradient(45deg, #6c757d, #495057);
     }
-    .stButton > button *, .stButton > button p, .stButton > button div {
-        color: inherit !important;
+    h1, h2, h3, h4, h5, h6, p, div, span, label {
+        color: white !important;
     }
-    .stSelectbox > div > div, .stTextInput > div > div > input, .stTextArea > div > div > textarea {
-        background-color: #21262d !important;
-        color: #f0f6fc !important;
-        border: 1px solid #30363d !important;
+    .stSelectbox label, .stTextInput label, .stTextArea label, .stSlider label {
+        color: white !important;
     }
-    .stTabs [data-baseweb="tab-list"] {
-        background-color: #21262d !important;
+    .stFileUploader label {
+        color: white !important;
     }
-    .stTabs [data-baseweb="tab"] {
-        color: #f0f6fc !important;
+    .stMetric {
+        background: rgba(255, 255, 255, 0.1);
+        padding: 1rem;
+        border-radius: 10px;
+        backdrop-filter: blur(10px);
     }
-    .stFileUploader label, .stFileUploader > div > div {
-        color: #f0f6fc !important;
+    .stSuccess, .stError, .stInfo, .stWarning {
+        background: rgba(255, 255, 255, 0.1);
+        backdrop-filter: blur(10px);
+        border-radius: 10px;
     }
-    .stFileUploader [data-testid="stFileUploaderDropzoneInstructions"],
-    .stFileUploader [data-testid="stFileUploaderDropzoneInstructions"] * {
-        color: #f0f6fc !important;
+    .stExpander {
+        background: rgba(255, 255, 255, 0.1);
+        backdrop-filter: blur(10px);
+        border-radius: 10px;
     }
-    .stFileUploader svg {
-        fill: #f0f6fc !important;
-    }
-    .stFileUploader [data-testid="stFileUploaderDropzone"] {
-        background-color: #21262d !important;
-        border: 2px dashed #30363d !important;
-    }
-    .stFileUploader button {
-        color: #f0f6fc !important;
-        background-color: #30363d !important;
-        border: 1px solid #58a6ff !important;
-    }
-    .stSuccess, .stError, .stWarning, .stInfo {
-        color: #f0f6fc !important;
+    .stForm {
+        background: rgba(255, 255, 255, 0.1);
+        backdrop-filter: blur(10px);
+        border-radius: 10px;
+        padding: 1rem;
     }
 </style>
 """, unsafe_allow_html=True)
